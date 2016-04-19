@@ -1,0 +1,13 @@
+<ul class="pagination">
+	<li {{#unless entities.previous}}class="disabled"{{/unless}}>
+		<a href="{{paginationPreviousUrl entities.previous}}">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+	</li>
+	{{{paginationNavigation entities.pages entities.currentPage entities.totalPages}}}
+	<li {{#unless entities.next}}class="disabled"{{/unless}}>
+		<a href="{{paginationNextUrl entities.next entities.totalPages}}">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</li>
+</ul>

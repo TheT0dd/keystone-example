@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="panel panel-primary">
+		<!-- Default panel contents -->
+		<div class="panel-heading">Tickets</div>
+		<div class="panel-body">
+			<p>These are list of tickets in the system.</p>
+		</div>
+
+		<!-- Table -->
+		<table class="table table-striped">
+			{{#each data.tickets.results}}
+			<tr>
+				<td>
+					<div class=' col-md-1'>
+						<span class="label label-info pull-right">{{this.status}}</span>
+					</div>
+
+					<a href='{{this.url}}'><b>{{this.title}}</b><a>
+
+					<ul class="ticket-meta">
+						<li>&nbsp;</li>
+						<li>
+							<small>Status</small><a href="" rel="tag">{{this.status}}</a>
+						</li>
+						<li>
+							<small>Priority</small><a href="" rel="tag">{{this.priority}}</a>
+						</li>
+						<li>
+							<small>Category</small><a href="" rel="tag">{{this.category}}</a>
+						</li>
+						<li>
+							<small>Last Updated</small>
+							<abbr class="last-updated">{{date this.createdAt format='DD/MM/YYYY'}}</abbr>
+						</li>
+					</ul>
+				</td>
+			</tr>
+			{{/each}}
+		</table>
+		<div class="panel-footer">
+			{{> paginationGeneric entities=data.tickets }}
+		</div>
+	</div>
+
+</div>
