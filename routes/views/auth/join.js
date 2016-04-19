@@ -15,6 +15,16 @@ exports = module.exports = function(req, res) {
 
 	view.on('post', function(next) {
 
+		// Series of async tasks:
+		//
+		// NOTE: not all below tasks are actually async,
+		// however all are treated as such.
+		//
+		// 1. basic validators
+		// 2. find username duplicate
+		// 3. find email duplicate
+		// 4. create user and save in db
+		// 5. register user (create session)
 		async.series([
 
 			function(cb) {
