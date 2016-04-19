@@ -314,7 +314,7 @@ module.exports = function() {
 	_helpers.flashMessages = function(messages) {
 		var output = '';
 		for (var i = 0; i < messages.length; i++) {
-
+			console.log(messages[i]);
 			if (messages[i].title) {
 				output += '<h4>' + messages[i].title + '</h4>';
 			}
