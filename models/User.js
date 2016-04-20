@@ -31,6 +31,12 @@ User.relationship({
 });
 
 // Provide access to Keystone
+// NOTE: The user model must have a canAccessKeystone property
+// (which can be a virtual method or a stored boolean) that says
+// whether a user can access Keystone's Admin UI or not.
+// NOTE: If you choose to use a virtual method setting the value in
+// mongodb directly will not authenticate correctly. A virtual method
+// is useful when the criteria for access is more complex
 User.schema.virtual('canAccessKeystone').get(function() {
 	return this.isAdmin;
 });

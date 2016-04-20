@@ -34,14 +34,14 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 
-	// where to store sessions server-side
+	// Where to store sessions server-side
 	// NOTE: By default, Keystone.js will use the in-memory session store provided
 	// by Express, which should only be used in development because it does not scale
 	// past a single process, and leaks memory over time
 	// NOTE: to use the 'mongo' option, we need to `npm install connect-mongo --save`
 	'session store': 'mongo',
 
-	// access admin UI requires authentication
+	// Enable Keystone built-in views for signing in and out
 	'auth': true,
 
 	'user model': 'User'
