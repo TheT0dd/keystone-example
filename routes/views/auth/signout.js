@@ -1,7 +1,8 @@
-var keystone = require('keystone'),
-	User = keystone.list('User');
-var _ = require('underscore');
+var keystone = require('keystone');
 
 exports = module.exports = function(req, res) {
 
+	keystone.session.signout(req, res, function() {
+		res.redirect('/');
+	});
 };

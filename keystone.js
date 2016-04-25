@@ -86,6 +86,10 @@ keystone.set('email locals', {
 	}
 });
 
+// Switch Keystone Email defaults to handlebars
+keystone.Email.defaults.templateExt = 'hbs';
+keystone.Email.defaults.templateEngine = require('handlebars');
+
 // Setup replacement rules for emails, to automate the handling of differences
 // between development a production.
 

@@ -314,7 +314,11 @@ module.exports = function() {
 	_helpers.flashMessages = function(messages) {
 		var output = '';
 		for (var i = 0; i < messages.length; i++) {
-			console.log(messages[i]);
+
+			if (typeof messages[i] === 'string') {
+				output += '<p>' + messages[i] + '</p>';
+			}
+
 			if (messages[i].title) {
 				output += '<h4>' + messages[i].title + '</h4>';
 			}
@@ -347,7 +351,7 @@ module.exports = function() {
 
 	_helpers.underscoreFormat = function (obj, underscoreMethod) {
 		return obj._[underscoreMethod].format();
-	}
+	};
 
 	return _helpers;
 };
